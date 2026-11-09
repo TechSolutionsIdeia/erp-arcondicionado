@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101d32">
+  <title>ClimaGest | Gestão de Climatização</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">❄</div>
+        <div><strong>ClimaGest</strong><small>GESTÃO DE CLIMATIZAÇÃO</small></div>
+      </div>
+      <div class="nav-label">MENU PRINCIPAL</div>
+      <nav id="main-nav">
+        <button class="nav-item active" data-page="dashboard"><span>▦</span> Visão geral</button>
+        <button class="nav-item" data-page="clientes"><span>♙</span> Clientes <b>48</b></button>
+        <button class="nav-item" data-page="equipamentos"><span>❄</span> Equipamentos</button>
+        <button class="nav-item" data-page="orcamentos"><span>▤</span> Orçamentos</button>
+        <button class="nav-item" data-page="ordens"><span>▣</span> Ordens de serviço <b class="nav-alert">5</b></button>
+        <button class="nav-item" data-page="agenda"><span>▦</span> Agenda</button>
+        <button class="nav-item" data-page="tecnicos"><span>♧</span> Técnicos</button>
+        <button class="nav-item" data-page="estoque"><span>▧</span> Estoque</button>
+        <div class="nav-label nav-label-spaced">GESTÃO</div>
+        <button class="nav-item" data-page="financeiro"><span>＄</span> Financeiro</button>
+        <button class="nav-item" data-page="relatorios"><span>▥</span> Relatórios</button>
+        <button class="nav-item" data-page="configuracoes"><span>⚙</span> Configurações</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">✦</div><strong>Precisa de ajuda?</strong><p>Consulte dicas para aproveitar melhor o ClimaGest.</p><button onclick="toast('Central de ajuda demonstrativa')">Acessar ajuda →</button></div>
+        <div class="user-mini"><div class="avatar avatar-blue">MC</div><div><strong>Marcos Costa</strong><small>Administrador</small></div><span class="dots">•••</span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu">☰</button>
+        <div class="breadcrumb"><span>ClimaGest</span><i>/</i><strong id="crumb">Visão geral</strong></div>
+        <div class="top-actions">
+          <span class="demo-pill"><span></span> Ambiente de demonstração</span>
+          <button class="icon-btn" title="Notificações" onclick="toast('Você está em dia com as notificações!')">♧<em></em></button>
+          <div class="top-user"><div class="avatar avatar-blue">MC</div><span>Marcos Costa</span><small>⌄</small></div>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="page-heading">
+          <div><div class="eyebrow" id="eyebrow">SEGUNDA-FEIRA, 09 DE NOVEMBRO</div><h1 id="page-title">Bom dia, Marcos! <span>☀</span></h1><p id="page-subtitle">Aqui está o resumo da operação da sua empresa hoje.</p></div>
+          <div class="heading-actions"><button class="btn btn-light" onclick="toast('Relatório demonstrativo preparado!')">⇩ Exportar</button><button class="btn btn-primary" id="primary-action" onclick="openCreate()">＋ Novo orçamento</button></div>
+        </div>
+        <div id="page-content"></div>
+        <footer>© 2026 ClimaGest · Sistema de Gestão de Climatização <span>Protótipo para demonstração</span></footer>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modal">
+    <div class="modal">
+      <div class="modal-head"><div><span class="eyebrow">CADASTRO RÁPIDO</span><h2 id="modal-title">Novo cadastro</h2></div><button class="close-btn" onclick="closeModal()">×</button></div>
+      <form id="modal-form"><div id="modal-fields" class="form-grid"></div><div class="modal-actions"><button type="button" class="btn btn-light" onclick="closeModal()">Cancelar</button><button class="btn btn-primary" type="submit">Salvar cadastro</button></div></form>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
